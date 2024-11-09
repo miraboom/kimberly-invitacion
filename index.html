@@ -3,85 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación a los 15 Años de Kimberly Dayana Reyes Bautista</title>
+    <title>Confirmación de Asistencia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e0f7fa;
+            background-color: #ffffff;
             color: #333;
             text-align: center;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: #e0f2f1;
+            background: #f9f9f9;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .header {
-            background-color: #4fc3f7;
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px 10px 0 0;
-            position: relative;
-            overflow: hidden;
-            text-align: left;
-            padding-left: 30px;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            position: relative;
-            display: block;
-        }
-        .header h2 {
-            font-size: 1.5em;
-            margin: 0;
-        }
-        /* Media query para reducir el tamaño del texto y ajustar la imagen en pantallas pequeñas */
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.4em;
-            }
-            .header h2 {
-                font-size: 1em;
-            }
-            .cinderella-image {
-                width: 90px; /* Reducir tamaño de la imagen en móviles */
-                top: 5px; /* Ajustar posición vertical */
-                right: 5px; /* Ajustar posición horizontal */
-            }
-        }
-        /* Estilo de los destellos en forma de 4 picos */
-        .sparkle {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
-            animation: sparkle-animation 3s infinite;
-        }
-        /* Animación de los destellos para aparecer y desaparecer aleatoriamente */
-        @keyframes sparkle-animation {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        /* Posiciones aleatorias de los destellos en el encabezado */
-        .sparkle1 { top: 15px; left: 20%; animation-delay: 0.5s; }
-        .sparkle2 { top: 40px; right: 25%; animation-delay: 1.5s; }
-        .sparkle3 { bottom: 15px; left: 30%; animation-delay: 2s; }
-        .sparkle4 { top: 25px; right: 40%; animation-delay: 1s; }
-        .sparkle5 { top: 10px; left: 60%; animation-delay: 2.5s; }
-        .sparkle6 { bottom: 20px; right: 10%; animation-delay: 0.8s; }
-        
-        .details p, .dress-code p {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #0288d1;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
         .cta-button, .submit-button {
             background-color: #039be5;
@@ -91,7 +29,7 @@
             border-radius: 5px;
             font-size: 1.2em;
             cursor: pointer;
-            text-decoration: none;
+            margin-top: 10px;
         }
         .cta-button:hover, .submit-button:hover {
             background-color: #0288d1;
@@ -102,13 +40,6 @@
         }
         .form-field {
             margin: 10px 0;
-        }
-        .cinderella-image {
-            position: absolute;
-            top: -30px;
-            right: -10px;
-            width: 200px;
-            height: 200px;
         }
     </style>
     <script>
@@ -134,26 +65,6 @@
 <body>
 
     <div class="container">
-        <div class="header">
-            <h1>Invitación a mis 15 Años</h1>
-            <h2>Kimberly Dayana Reyes Bautista</h2>
-            <!-- Imagen de Cenicienta ajustada para móviles -->
-            <img src="https://i.pinimg.com/originals/7c/b7/f0/7cb7f031044e4da72ae99fa5746d653a.gif" alt="Cenicienta" class="cinderella-image">
-            <!-- Destellos con forma de 4 picos y animación aleatoria -->
-            <div class="sparkle sparkle1"></div>
-            <div class="sparkle sparkle2"></div>
-            <div class="sparkle sparkle3"></div>
-            <div class="sparkle sparkle4"></div>
-            <div class="sparkle sparkle5"></div>
-            <div class="sparkle sparkle6"></div>
-        </div>
-        <div class="details">
-            <p><strong>Lugar:</strong> Club Hondureño Arabe, Salón: Jordan y Natividad</p>
-            <p><strong>Fecha:</strong> 28 de Diciembre de 2024</p>
-            <p><strong>Hora:</strong> 8:00 pm</p>
-            <p><strong>Código de vestimenta:</strong> No usar color celeste</p>
-        </div>
-
         <button class="cta-button" onclick="toggleForm()">Confirmar Asistencia</button>
 
         <div class="form-section">
