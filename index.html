@@ -34,7 +34,7 @@
         .cta-button:hover, .submit-button:hover {
             background-color: #0288d1;
         }
-        .form-section {
+        .form-section, .names-section {
             display: none;
             margin-top: 20px;
         }
@@ -47,9 +47,26 @@
             document.querySelector('.form-section').style.display = 'block';
         }
 
+        function showNameFields() {
+            const attendeeCount = parseInt(document.getElementById('attendee-count').value);
+            const namesSection = document.querySelector('.names-section');
+            namesSection.style.display = 'block';
+
+            // Show only the number of name fields required
+            for (let i = 1; i <= 4; i++) {
+                const nameField = document.getElementById('name' + i);
+                if (i <= attendeeCount) {
+                    nameField.style.display = 'block';
+                } else {
+                    nameField.style.display = 'none';
+                    nameField.value = ''; // Clear any previously entered values
+                }
+            }
+        }
+
         function sendConfirmation() {
             const names = [];
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 4; i++) {
                 const name = document.getElementById('name' + i).value.trim();
                 if (name) names.push(name);
             }
@@ -68,31 +85,43 @@
         <button class="cta-button" onclick="toggleForm()">Confirmar Asistencia</button>
 
         <div class="form-section">
-            <h3>Confirmación de Asistencia</h3>
+            <h3>¿Cuántas personas asistirán?</h3>
             <div class="form-field">
-                <input type="text" id="name1" placeholder="Nombre 1" />
-            </div>
-            <div class="form-field">
-                <input type="text" id="name2" placeholder="Nombre 2" />
-            </div>
-            <div class="form-field">
-                <input type="text" id="name3" placeholder="Nombre 3" />
-            </div>
-            <div class="form-field">
-                <input type="text" id="name4" placeholder="Nombre 4" />
-            </div>
-            <div class="form-field">
-                <input type="text" id="name5" placeholder="Nombre 5" />
-            </div>
-            <div class="form-field">
-                <select id="attendance">
-                    <option value="Asistiré">Asistiré</option>
-                    <option value="No asistiré">No asistiré</option>
+                <select id="attendee-count" onchange="showNameFields()">
+                    <option value="0">Seleccione el número de personas</option>
+                    <option value="1">1 Persona</option>
+                    <option value="2">2 Personas</option>
+                    <option value="3">3 Personas</option>
+                    <option value="4">4 Personas</option>
                 </select>
             </div>
-            <button class="submit-button" onclick="sendConfirmation()">Enviar Confirmación</button>
+
+            <div class="names-section">
+                <h3>Introduzca los nombres:</h3>
+                <div class="form-field" id="name1" style="display: none;">
+                    <input type="text" placeholder="Nombre 1">
+                </div>
+                <div class="form-field" id="name2" style="display: none;">
+                    <input type="text" placeholder="Nombre 2">
+                </div>
+                <div class="form-field" id="name3" style="display: none;">
+                    <input type="text" placeholder="Nombre 3">
+                </div>
+                <div class="form-field" id="name4" style="display: none;">
+                    <input type="text" placeholder="Nombre 4">
+                </div>
+                <div class="form-field">
+                    <label for="attendance">¿Asistiré?</label>
+                    <select id="attendance">
+                        <option value="Asistiré">Asistiré</option>
+                        <option value="No asistiré">No asistiré</option>
+                    </select>
+                </div>
+                <button class="submit-button" onclick="sendConfirmation()">Enviar Confirmación</button>
+            </div>
         </div>
     </div>
 
 </body>
 </html>
+
