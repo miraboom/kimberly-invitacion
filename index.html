@@ -52,14 +52,14 @@
             const namesSection = document.querySelector('.names-section');
             namesSection.style.display = 'block';
 
-            // Show only the number of name fields required
+            // Mostrar solo el número de campos de nombre necesarios
             for (let i = 1; i <= 4; i++) {
                 const nameField = document.getElementById('name' + i);
                 if (i <= attendeeCount) {
                     nameField.style.display = 'block';
                 } else {
                     nameField.style.display = 'none';
-                    nameField.value = ''; // Clear any previously entered values
+                    nameField.value = ''; // Limpiar cualquier valor ingresado anteriormente
                 }
             }
         }
@@ -67,7 +67,7 @@
         function sendConfirmation() {
             const names = [];
             for (let i = 1; i <= 4; i++) {
-                const name = document.getElementById('name' + i).value.trim();
+                const name = document.getElementById('input-name' + i).value.trim();
                 if (name) names.push(name);
             }
             const attendance = document.getElementById('attendance').value;
@@ -99,16 +99,16 @@
             <div class="names-section">
                 <h3>Introduzca los nombres:</h3>
                 <div class="form-field" id="name1" style="display: none;">
-                    <input type="text" placeholder="Nombre 1">
+                    <input type="text" id="input-name1" placeholder="Nombre 1">
                 </div>
                 <div class="form-field" id="name2" style="display: none;">
-                    <input type="text" placeholder="Nombre 2">
+                    <input type="text" id="input-name2" placeholder="Nombre 2">
                 </div>
                 <div class="form-field" id="name3" style="display: none;">
-                    <input type="text" placeholder="Nombre 3">
+                    <input type="text" id="input-name3" placeholder="Nombre 3">
                 </div>
                 <div class="form-field" id="name4" style="display: none;">
-                    <input type="text" placeholder="Nombre 4">
+                    <input type="text" id="input-name4" placeholder="Nombre 4">
                 </div>
                 <div class="form-field">
                     <label for="attendance">¿Asistiré?</label>
@@ -124,4 +124,3 @@
 
 </body>
 </html>
-
